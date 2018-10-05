@@ -1,5 +1,6 @@
 package com.niit.smartphonebackend.model;
 
+
 import java.io.Serializable;
 
 import javax.persistence.Entity;
@@ -8,8 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 @Component
 @Entity
 public class Product implements Serializable
@@ -22,10 +25,19 @@ public class Product implements Serializable
  private float price;
  private int quantity;
  private int categoryId;
+ @Transient
+ MultipartFile productImage;
  @JoinColumn(name="categoryId",nullable=false,updatable=false,insertable=false)
  @ManyToOne
  Category category;
 
+ 
+public MultipartFile getProductImage() {
+	return productImage;
+}
+public void setProductImage(MultipartFile productImage) {
+	this.productImage = productImage;
+}
 public int getProductId() {
 	return productId;
 }

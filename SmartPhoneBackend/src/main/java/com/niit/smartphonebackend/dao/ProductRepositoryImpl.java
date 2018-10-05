@@ -87,4 +87,11 @@ public class ProductRepositoryImpl implements ProductRepository
 		}
 	}
 
+	public List<Product> getAllProducts(int categoryId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
 }

@@ -11,5 +11,6 @@ public interface ProductRepository
 	public boolean deleteProduct(int productId);
 	public List<Product> getAllProduct();
 	public Product getProductById(int productId);
+	public List<Product> getAllProducts(int categoryId);
 }
 
